@@ -27,7 +27,4 @@ after_initialize do
         wp_user_id
     }
 
-    add_to_serializer(:web_hook_post, :custom_fields, false) {
-        'post'
-    }
 end
