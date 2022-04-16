@@ -19,7 +19,7 @@ after_initialize do
     category = Category.where(id: object.topic.category_id)[0]
     category_import_id = nil
 
-    if category.respond_to?("custom_fields") && !category.is_blank?
+    if category.respond_to?("custom_fields") && !category.blank?
       category_import_id = category.custom_fields["import_id"]
     end
 
@@ -30,7 +30,7 @@ after_initialize do
   add_to_serializer(:web_hook_topic_view, :user_import_id, false) {
     user = User.where(id: object.topic.user_id)[0]
     wp_user_id = nil
-    if user.respond_to?("custom_fields") && !user.is_blank?
+    if user.respond_to?("custom_fields") && !user.blank?
       wp_user_id = user.custom_fields["import_id"]
     end
     
