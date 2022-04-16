@@ -19,7 +19,8 @@ after_initialize do
         category = Category.where(id: object.topic.category_id)[0]
         category_import_id = nil
         unless category.respond_to?('custom_fields')
-        category_import_id = category.custom_fields["import_id"]
+            category_import_id = category.custom_fields["import_id"]
+        end
         return if category_import_id.blank?
         category_import_id
     }
@@ -28,7 +29,8 @@ after_initialize do
         user = User.where(id: object.topic.user_id)[0]
         wp_user_id = nil
         unless user.respond_to?('custom_fields')
-        wp_user_id = user.custom_fields["import_id"]
+            wp_user_id = user.custom_fields["import_id"]
+        end
         return if wp_user_id.blank?
         wp_user_id
     }
