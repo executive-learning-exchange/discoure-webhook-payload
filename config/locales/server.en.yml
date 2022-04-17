@@ -1,1 +1,3 @@
 en:
+  site_settings:
+    discourse_webhook_payload_mod_enabled: Enable webhook payload modification?
